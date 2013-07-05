@@ -1,9 +1,9 @@
-production:
+<%= node["application"]["environment"] %>:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: boatrecord_production
+  database: <%= node["application"]["id"] %>_<%= node["application"]["environment"] %>
   pool: 5
-  username: app_boatrecord
+  username: app_<%= node["application"]["id"] %>
   password: <%= node['application']['application']['database_user_password'] %>
   host: localhost

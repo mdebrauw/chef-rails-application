@@ -1,6 +1,6 @@
 <%= node["application"]["environment"] %>:
   sessions:
     default:
-      database: boatrecord_<%= node["application"]["environment"] %>
+      database: <%= node["application"]["id"] %>_<%= node["application"]["environment"] %>
       hosts:
         - localhost:27017

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rails-app
+# Cookbook Name:: rails-application
 # Recipe:: default
 #
 # Copyright 2012, Debrauw.net
