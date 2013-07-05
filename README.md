@@ -8,7 +8,9 @@ Installs the app from a specified git revision using the Chef application resour
 
 Attributes
 ==========
+TODO
 
 Usage
 =====
+TODO
 
