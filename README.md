@@ -1,4 +1,13 @@
-chef-rails-application
-======================
+Description
+===========
+Deployment recipe for a Rails app.
 
-Chef recipe for rails application installation
+Requirements
+============
+
+Attributes
+==========
+
+Usage
+=====
+

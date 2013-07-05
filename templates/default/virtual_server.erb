@@ -1,0 +1,8 @@
+server {
+  listen   80;
+  server_name <%= node["application"]["nginx_server_name"] || node["fqdn"] %>;
+  rails_env <%= node["application"]["environment"] %>;
+  root /srv/<%= node["application"]["id"] %>/current/public;
+  client_max_body_size 8M;
+  passenger_enabled on;
+}
