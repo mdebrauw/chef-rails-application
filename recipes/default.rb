@@ -54,6 +54,16 @@ template "#{node['application']['deploy_to']}/shared/config/mongoid.yml" do
   group node['application']['deploy_user']
 end
 
+# Deploy virtual server file for nginx
+#
+template "#{node['application']['id']}" do
+  path "/etc/nginx/sites-available/#{node['application']['id']}"
+  source "virtual_server.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+end
+
 # Deploy revision
 #
 deploy "#{node['application']['deploy_to']}" do
@@ -95,15 +105,6 @@ deploy "#{node['application']['deploy_to']}" do
       cwd current_release_directory
       user running_deploy_user
       code "bundle exec rake assets:precompile RAILS_ENV=#{environment} RAILS_GROUPS=assets"
-    end
-
-    # Deploy virtual server file for nginx
-    template "#{node['application']['id']}" do
-      path "/etc/nginx/sites-available/#{node['application']['id']}"
-      source "virtual_server.erb"
-      owner "root"
-      group "root"
-      mode "0644"
     end
 
     # Symlink it to enable it for nginx
