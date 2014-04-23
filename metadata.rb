@@ -1,3 +1,4 @@
+name		 "chef-rails-application"
 maintainer       "Mark de Brauw"
 maintainer_email "mark@debrauw.net"
 license          "All rights reserved"
